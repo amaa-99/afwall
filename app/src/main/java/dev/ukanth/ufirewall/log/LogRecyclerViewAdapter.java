@@ -48,50 +48,6 @@ public class LogRecyclerViewAdapter extends RecyclerView.Adapter<LogRecyclerView
         return new ViewHolder(mView);
     }
 
-    /*private Bitmap getAppIcon(PackageManager mPackageManager, ApplicationInfo applicationInfo) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            return getAppIcon26(mPackageManager, applicationInfo);
-        }
-        try {
-            Drawable drawable = mPackageManager.getApplicationIcon(applicationInfo);
-            return ((BitmapDrawable) drawable).getBitmap();
-        } catch (Exception e) {
-            Log.e(TAG, e.getMessage(), e);
-        }
-        return null;
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    private Bitmap getAppIcon26(PackageManager mPackageManager, ApplicationInfo applicationInfo) {
-        Drawable drawable = mPackageManager.getApplicationIcon(applicationInfo);
-        if (drawable instanceof BitmapDrawable) {
-            return ((BitmapDrawable) drawable).getBitmap();
-        } else if (drawable instanceof AdaptiveIconDrawable) {
-            Drawable backgroundDr = ((AdaptiveIconDrawable) drawable).getBackground();
-            Drawable foregroundDr = ((AdaptiveIconDrawable) drawable).getForeground();
-
-            Drawable[] drr = new Drawable[2];
-            drr[0] = backgroundDr;
-            drr[1] = foregroundDr;
-
-            LayerDrawable layerDrawable = new LayerDrawable(drr);
-
-            int width = layerDrawable.getIntrinsicWidth();
-            int height = layerDrawable.getIntrinsicHeight();
-
-            Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-
-            Canvas canvas = new Canvas(bitmap);
-
-            layerDrawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
-            layerDrawable.draw(canvas);
-
-            return bitmap;
-        }
-
-        return null;
-    }*/
-
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         LogData data = logData.get(position);
